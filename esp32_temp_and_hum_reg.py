@@ -257,17 +257,17 @@ while True:
     temp = sensor.temperature()
     hum = sensor.humidity()
     temp_f = temp * (9/5) + 32.0
-    print('Temperature: %3.1f C' %temp)
-    print('Humidity: %3.1f %%' %hum)
+    print('Temperatura: %3.1f C' %temp) #Canviem l'idioma dels prints
+    print('Humitat: %3.1f %%' %hum)
   except OSError as e:
     print('Failed to read sensor.')
 
-  if temp < 18 or temp > 25:
+  if temp < 10 or temp > 42: #Modifiquem els valors una mica
     led1.on()
   else:
     led1.off()
 
-  if hum < 20 or hum > 60:
+  if hum < 8 or hum > 100: #Modifiquem els valors una mica
     led2.on()
   else:
     led2.off()
